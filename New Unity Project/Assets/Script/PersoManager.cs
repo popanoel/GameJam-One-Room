@@ -6,9 +6,10 @@ public class PersoManager : MonoBehaviour {
 
 	public enum Char {Bonnie,Amelia,Bernard,Chips,Joachim,None};
 
-	private Char CurrentChar=Char.None;
+	private Char CurrentChar;
 	// Use this for initialization
 	void Start () {
+	CurrentChar=Char.None;
 		
 	}
 	
