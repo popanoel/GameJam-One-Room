@@ -5,47 +5,32 @@ using UnityEngine;
 public class PanelManager : MonoBehaviour {
 
 	[SerializeField]
-	private List<Transform> targets;
-	private int CurPanel = 1;
+	private List<GameObject> _mesEnfants;
 
-	//utilisée sous forme de référence avec SmoothDamp
-	private Vector3 _velocity = Vector3.zero;
-	private float _smoothTime = 0.3f;
-	private Vector3 targetPosition;
-	void Start()
+	private int CurPanel = 0;
+
+	private void Start()
 	{
-		targetPosition=transform.position;
+		CurPanel=0;
 	}
-
-
 	public void goRight(){
-		if(CurPanel == 4){
-			CurPanel =1;
-			transform.position = new Vector3(targets[0].position.x,transform.position.y,transform.position.z);
-		}else{
-			CurPanel+=1;		
-		}
 		
-		targetPosition = new Vector3(targets[CurPanel].position.x,transform.position.y,transform.position.z);
-
+		_mesEnfants[CurPanel].SetActive(false);
+		if(CurPanel>=3){
+			CurPanel=0;
+		}else{
+			CurPanel+=1;
+		}
+		_mesEnfants[CurPanel].SetActive(true);
 	}
+
 	public void goLeft(){
-		if(CurPanel == 1){
-			CurPanel =4;
-			transform.position = new Vector3(targets[4].position.x,transform.position.y,transform.position.z);
-
+		_mesEnfants[CurPanel].SetActive(false);
+		if(CurPanel<=0){
+			CurPanel=3;
 		}else{
-			CurPanel-=1;		
+			CurPanel-=1;
 		}
-
-		targetPosition = new Vector3(targets[CurPanel].position.x,transform.position.y,transform.position.z);
-
-	}
-	private void Update()
-	{
-		Vector3 newPos = Vector3.SmoothDamp(transform.position,targetPosition, ref _velocity,_smoothTime);
-		
-		transform.position = newPos;
-		
+		_mesEnfants[CurPanel].SetActive(true);
 	}
 }

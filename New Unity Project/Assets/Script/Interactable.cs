@@ -10,20 +10,21 @@ public class Interactable : MonoBehaviour {
 
 	[SerializeField]
 	private GameObject _menu;
+
+	protected PersoManager _PersoManager;
 	private void Start()
 	{
+		_PersoManager=GameObject.Find("GameManager").gameObject.GetComponent<PersoManager>();
 	}
 
 	private void Update()
 	{
-		if(Input.GetMouseButtonUp(0)){
-		}
 	}
 	void OnMouseUp()
 	{
 		AfficheMenu();
 	}
-	private void AfficheMenu(){
+	protected virtual void AfficheMenu(){
 
 		GameObject menu = Instantiate(_menu,new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x,Camera.main.ScreenToWorldPoint(Input.mousePosition).y,0),Quaternion.identity);
 		//menu.transform.SetParent(GameObject.Find("Canvas").transform);

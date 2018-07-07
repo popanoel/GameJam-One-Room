@@ -4,21 +4,28 @@ using UnityEngine;
 
 public class PersoManager : MonoBehaviour {
 
-	public enum Char {Bonnie,Amelia,Bernard,Chips,Joachim,None};
+	public enum Char {Bonnie,Amelia,Bernard,Chips,None,Me};
 
-	private Char CurrentChar;
+	static private Char CurrentChar;
+
+	private GameObject _monAffichage;
 	// Use this for initialization
 	void Start () {
-	CurrentChar=Char.None;
+		CurrentChar=Char.None;
+		_monAffichage=GameObject.Find("PersoAffiche");
+		PersoChange(Char.None);
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	public void PersoChange(Char newPerso){
+		CurrentChar=newPerso;
+		if(newPerso==Char.None){
+			_monAffichage.GetComponent<SpriteRenderer>().sprite=null;
+		}else{
+			_monAffichage.GetComponent<SpriteRenderer>().sprite=Resources.Load<Sprite>(CurrentChar.ToString());
+		}
 
-	public Char getCurrentChar{
+	}
+	static public Char getCurrentChar{
 		get{
 			return CurrentChar;
 		}
