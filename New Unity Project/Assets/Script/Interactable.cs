@@ -8,12 +8,12 @@ public class Interactable : MonoBehaviour {
 	[SerializeField]
 	private PersoManager.Char Mychef;
 
-	[SerializeField]
 	private GameObject _menu;
 
 	protected PersoManager _PersoManager;
-	private void Start()
+	virtual protected void Start()
 	{
+		_menu=Resources.Load<GameObject>("Menu");
 		_PersoManager=GameObject.Find("GameManager").gameObject.GetComponent<PersoManager>();
 	}
 
@@ -22,9 +22,9 @@ public class Interactable : MonoBehaviour {
 	}
 	void OnMouseUp()
 	{
-		AfficheMenu();
+		Action();
 	}
-	protected virtual void AfficheMenu(){
+	protected virtual void Action(){
 
 		GameObject menu = Instantiate(_menu,new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x,Camera.main.ScreenToWorldPoint(Input.mousePosition).y,0),Quaternion.identity);
 		//menu.transform.SetParent(GameObject.Find("Canvas").transform);

@@ -39,6 +39,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Derriere BG
+    uniqueID: 2911733551
+    locked: 0
   - name: Bg
     uniqueID: 302475721
     locked: 0

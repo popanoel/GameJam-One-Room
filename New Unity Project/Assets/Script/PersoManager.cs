@@ -21,7 +21,7 @@ public class PersoManager : MonoBehaviour {
 		if(newPerso==Char.None){
 			_monAffichage.GetComponent<SpriteRenderer>().sprite=null;
 		}else{
-			_monAffichage.GetComponent<SpriteRenderer>().sprite=Resources.Load<Sprite>(CurrentChar.ToString());
+			_monAffichage.GetComponent<SpriteRenderer>().sprite=Resources.Load<Sprite>("Perso/"+CurrentChar.ToString());
 		}
 
 	}
