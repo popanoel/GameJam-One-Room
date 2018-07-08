@@ -35,12 +35,12 @@ public class Levier : Interactable {
 					transform.parent.Find("Levier_"+PrisonManager.getCurrentPrison.ToString()).gameObject.GetComponent<Levier>().toggleLevier();
 					_prisonManager.PrisonChange(_maPrison);
 			}else{
-				Parler.Parle(PersoManager.Char.Me,"There must be at least one of those levers up at all time");
+				Parler.Parleureur.Parle(PersoManager.Char.Me,"There must be at least one of those levers up at all time");
 			}
 		}else{
 			if(!_isOpen){
 				if(PersoManager.getCurrentChar!=PersoManager.Char.None){
-					Parler.Parle(PersoManager.Char.Me,"I can't get 2 subjects out at the same time...");
+					Parler.Parleureur.Parle(PersoManager.Char.Me,"I can't get 2 subjects out at the same time...");
 				}else{
 					toggleLevier();
 					_PersoManager.PersoChange(_monPrisonier);
@@ -57,10 +57,10 @@ public class Levier : Interactable {
 	private void toggleLevier(){
 		if(_isOpen){
 			_isOpen=false;
-			imgLevier.position=transform.position;
+			imgLevier.position=new Vector3(transform.position.x,transform.position.y+DecalageLevier,transform.position.z);
 		}else{
 			_isOpen=true;
-			imgLevier.position=new Vector3(transform.position.x,transform.position.y+DecalageLevier,transform.position.z);
+			imgLevier.position=transform.position;
 		}
 
 	}

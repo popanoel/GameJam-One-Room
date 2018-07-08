@@ -51,3 +51,6 @@ TagManager:
   - name: Menu
     uniqueID: 296439159
     locked: 0
+  - name: Dialogue
+    uniqueID: 696077685
+    locked: 0
