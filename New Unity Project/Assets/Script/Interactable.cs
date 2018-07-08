@@ -17,9 +17,6 @@ public class Interactable : MonoBehaviour {
 		_PersoManager=GameObject.Find("GameManager").gameObject.GetComponent<PersoManager>();
 	}
 
-	private void Update()
-	{
-	}
 	void OnMouseUp()
 	{
 		Action();
@@ -27,7 +24,6 @@ public class Interactable : MonoBehaviour {
 	protected virtual void Action(){
 
 		GameObject menu = Instantiate(_menu,new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x,Camera.main.ScreenToWorldPoint(Input.mousePosition).y,0),Quaternion.identity);
-		//menu.transform.SetParent(GameObject.Find("Canvas").transform);
 	}
 	
 }

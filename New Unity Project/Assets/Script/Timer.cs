@@ -26,8 +26,8 @@ public class Timer : MonoBehaviour {
 	
 		_afficheTemps.text = aff_min + " : " + aff_sec;
 
-		if(_tempsRestant==0f){
-			Debug.Log("Game Over");
+		if(_tempsRestant<=1f){
+			GameManager.instance.StartCoroutine("GameO");
 		}
 	}
 }
