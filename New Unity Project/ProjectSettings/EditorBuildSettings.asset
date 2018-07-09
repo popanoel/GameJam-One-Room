@@ -11,3 +11,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/Main.unity
     guid: bd20d201b99145c4e8324dc5898e1571
+  - enabled: 1
+    path: Assets/Scene/DeadAmelia.unity
+    guid: 49938ed5148e45746a25b1121091cdb8
+  - enabled: 1
+    path: Assets/Scene/DeadBernard.unity
+    guid: 8930b94df1e6d064d9a3144b51144970
+  - enabled: 1
+    path: Assets/Scene/DeadBonnie.unity
+    guid: 60a8b192b31e03b4aa181f933f181e2a
+  - enabled: 1
+    path: Assets/Scene/DeadChips.unity
+    guid: b0a977b26fadf064cb77228156416b47
+  - enabled: 1
+    path: Assets/Scene/DeadNone.unity
+    guid: f9222575e3316e540b063fa695b24eae
+  - enabled: 1
+    path: Assets/Scene/GameOver.unity
+    guid: 210dc4fe373fc2547a4deccb823829d8

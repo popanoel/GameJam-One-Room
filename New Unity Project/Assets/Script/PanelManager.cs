@@ -16,7 +16,9 @@ public class PanelManager : MonoBehaviour {
 	public void goRight(){
 		
 		_mesEnfants[CurPanel].SetActive(false);
-		if(CurPanel>=3){
+		if(CurPanel==4){
+			CurPanel=1;
+		}else if(CurPanel>=3){
 			CurPanel=0;
 		}else{
 			CurPanel+=1;
@@ -26,11 +28,20 @@ public class PanelManager : MonoBehaviour {
 
 	public void goLeft(){
 		_mesEnfants[CurPanel].SetActive(false);
-		if(CurPanel<=0){
+		if(CurPanel==4){
+			CurPanel=1;
+		}else if(CurPanel<=0){
 			CurPanel=3;
 		}else{
 			CurPanel-=1;
 		}
 		_mesEnfants[CurPanel].SetActive(true);
+	}
+
+	public void toggleFinal(){
+
+		_mesEnfants[4].SetActive(!_mesEnfants[4].activeSelf);
+		_mesEnfants[CurPanel].SetActive(!_mesEnfants[CurPanel].activeSelf);
+		CurPanel=4;
 	}
 }

@@ -22,6 +22,7 @@ public class Levier : Interactable {
 
 		_PersoManager=GameObject.Find("GameManager").GetComponent<PersoManager>();
 		_prisonManager=GameObject.Find("GameManager").GetComponent<PrisonManager>();
+		_monSon=GetComponent<AudioSource>();
 		imgLevier=transform.Find("AfficheLevier");
 		if(_maPrison==PrisonManager.Prison.c0){
 			toggleLevier();
@@ -29,13 +30,14 @@ public class Levier : Interactable {
 	}
 
 	override protected void Action(){
+		_monSon.Play();
 		if(_door){
 			if(!_isOpen){
 					toggleLevier();
 					transform.parent.Find("Levier_"+PrisonManager.getCurrentPrison.ToString()).gameObject.GetComponent<Levier>().toggleLevier();
 					_prisonManager.PrisonChange(_maPrison);
 			}else{
-				Parler.Parleureur.Parle(PersoManager.Char.Me,"There must be at least one of those levers up at all time");
+				Parler.Parleureur.Parle(PersoManager.Char.Me,"There must be one of those levers down at all time");
 			}
 		}else{
 			if(!_isOpen){

@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Interactable
+  - PauseScreen
   layers:
   - Default
   - TransparentFX
@@ -39,6 +40,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: FUCKIN ORDI
+    uniqueID: 4212821393
+    locked: 0
   - name: Derriere BG
     uniqueID: 2911733551
     locked: 0
@@ -47,6 +51,9 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Objet
+    uniqueID: 1970093039
     locked: 0
   - name: Menu
     uniqueID: 296439159
