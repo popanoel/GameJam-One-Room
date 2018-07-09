@@ -1357,7 +1357,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -1000}
-  m_SizeDelta: {x: 0, y: 1408.45}
+  m_SizeDelta: {x: 0, y: 1125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &326561094
 MonoBehaviour:
@@ -7676,6 +7676,11 @@ Prefab:
       propertyPath: _lePanneau
       value: 
       objectReference: {fileID: 725779825}
+    - target: {fileID: 82828203759798182, guid: c4942e379cf24dc46b4822e234d14a88,
+        type: 2}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c4942e379cf24dc46b4822e234d14a88, type: 2}
   m_IsPrefabParent: 0
