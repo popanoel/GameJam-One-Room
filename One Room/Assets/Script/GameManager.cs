@@ -20,6 +20,13 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public IEnumerator GameO(PersoManager.Char isDead){
+		switch(isDead){
+				case PersoManager.Char.Amelia:Parler.Parleureur.Parle(isDead,"Wait, did you just… that gas… you didn’t, you little… I just want out of her! My revenge isn’t complete! Please! I beg… you… ");break;
+				case PersoManager.Char.Bonnie:Parler.Parleureur.Parle(isDead,"The gas… I don’t understand… why pick me? I just… saved them… from the torment… I did what… I wish was done to me…");break;
+				case PersoManager.Char.Bernard:Parler.Parleureur.Parle(isDead,"The gas… I see. I understand, I’m no angel. Please, just tell something to my boy… tell him… that I… ");break;
+				case PersoManager.Char.Chips:Parler.Parleureur.Parle(isDead,"Seriously dude?! After that 5 minutes of wholesome bonding?! You gotta be kidding me. Just watch me, I’m gonna get reincarnated… and I’m… I’m going after you…");break;
+			}
+		yield return new WaitForSeconds(4);
 		_monFadeur.SetTrigger("GameOver");
 		yield return new WaitForSeconds(1);
 		if(isDead==PersoManager.Char.Me){

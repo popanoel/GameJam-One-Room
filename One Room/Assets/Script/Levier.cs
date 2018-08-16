@@ -24,8 +24,10 @@ public class Levier : Interactable {
 		_prisonManager=GameObject.Find("GameManager").GetComponent<PrisonManager>();
 		_monSon=GetComponent<AudioSource>();
 		imgLevier=transform.Find("AfficheLevier");
-		if(_maPrison==PrisonManager.Prison.c0){
-			toggleLevier();
+		if(_door){
+			if(_maPrison==PrisonManager.Prison.c0){
+				toggleLevier();
+			}
 		}
 	}
 
@@ -41,16 +43,14 @@ public class Levier : Interactable {
 			}
 		}else{
 			if(!_isOpen){
-				if(PersoManager.getCurrentChar!=PersoManager.Char.None){
-					Parler.Parleureur.Parle(PersoManager.Char.Me,"I can't get 2 subjects out at the same time...");
-				}else{
 					toggleLevier();
+					if(PersoManager.getCurrentChar!=PersoManager.Char.None){
+						transform.parent.Find("Levier_"+PersoManager.getCurrentChar.ToString()).gameObject.GetComponent<Levier>().toggleLevier();
+					}
 					_PersoManager.PersoChange(_monPrisonier);
-				}
 			}else{
 				toggleLevier();
 				_PersoManager.PersoChange(PersoManager.Char.None);
-
 			}
 		}
 	}

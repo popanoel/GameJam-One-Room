@@ -57,8 +57,9 @@ public class Parler : MonoBehaviour {
 		} **/
 		
 		//cheker pour attendre un nombre de sec ou click
-		yield return new WaitForSeconds(3);
+		yield return new WaitForSeconds(5);
 		transform.position=new Vector3(transform.position.x,-80,transform.position.z);
+		_monText.text="";
 	}
 
 }
